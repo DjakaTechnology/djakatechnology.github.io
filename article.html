@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <style type="text/css">
+        .subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body onload="initialize()">
+    <div id="navbar" class="navbar article-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"><h1>travelID</h1></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <a href="index.html" style="color: black !important;">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="tourism.html" >Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html" class="active">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:25px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="article-page">
+        <div class="container">
+            <div class="ap-left">
+                <div class="ap-post  wow fadeInLeft">
+                    <div class="container">
+                        <div class="ap-post-header">
+                            <div class="ap-post-time">
+                                6 menit yang lalu
+                            </div>
+                            <div class="ap-post-share">
+                                <ul style="list-style: none;">
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/fb.png">   </li></a>
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/twitter.png">   </li></a>
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/in.png">   </li></a>
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/link.png">   </li></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ap-post-title">
+                            Jelajahilah Pulau Belitung
+                        </div>
+                        <div class="ap-post-location" style="!font-size: 14px">
+                            Pulau Belitung
+                        </div>
+                    </div>
+                    <div class="ap-post-img">
+                        <img src="assets/images/belitung_artikel.jpg">
+                    </div>
+                    <div class="container">
+                        <div class="ap-post-desc">
+                            <p>Seiring dengan melajunya popularitas novel sekaligus film karangan Andrea Hirata, secara tak langsung juga mendongkrak Pulau Belitung menjadi destinasi alternatif bagi para traveler. Bahkan, tak jarang turis mancanegara pun merencanakan liburannya ke pulau yang hanya memiliki dua kabupaten ini.<br><br>
+
+                            Seperti apa pesona keindahan alam dari pulau yang berbatasan dengan Selat Gaspar dan Selat Karimata ini? Berikut akan Hipwee ulas tentang destinasi wisata yang bisa kamu kunjungi di Pulau Belitung ini. Simak baik-baik ya, Travelers!</p>
+                        </div>
+                        <div class="ap-post-more">
+                            <a href="article-detail-belitung.html"><button class="primary-btn">Lanjutkan Membaca</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ap-post  wow fadeInLeft">
+                    <div class="container">
+                        <div class="ap-post-header">
+                            <div class="ap-post-time">
+                                6 menit yang lalu
+                            </div>
+                            <div class="ap-post-share">
+                                <ul style="list-style: none;">
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/fb.png">   </li></a>
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/twitter.png">   </li></a>
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/in.png">   </li></a>
+                                    <a href=""><li style="float: left; padding-left: 15px;"><img src="assets/icons/link.png">   </li></a>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ap-post-title">
+                            Secuil Hamparan Surga di Bumi Ponorogo
+                        </div>
+                        <div class="ap-post-location">
+                            Ponorogo
+                        </div>
+                    </div>
+                    <div class="ap-post-img">
+                        <img src="assets/images/ponorogo_artikel.jpg">
+                    </div>
+                    <div class="container">
+                        <div class="ap-post-desc">
+                            <p>Bereksplorasi ke Jawa Timur seolah tiada berujung. Bagai sebuah sumur vakansi yang tidak memiliki dasar. Banyak banget wisata yang bisa kamu jamah di Jawa Timur. Dari mulai wisata alam, kuliner, hingga kebudayaan. Salah satunya adalah kota kelahiran Reog, Ponorogo. Ya, Kota Ponorogo memang terkenal dengan Reognya yang telah mendunia. Tapi, nggak cuma kesenian Reog saja yang membuat semua orang tertarik untuk kembali dan singgah ke kota ini.</p>
+                        </div>
+                        <div class="ap-post-more">
+                            <a href="article-detail-ponorogo.html"><button class="primary-btn">Lanjutkan Membaca</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ap-subnav">
+                    <div class="ap-previous">
+                        <a href="article.html"><img style="  width: 42.2px;height: 28.8px;" src="assets/icons/kiri.png"></a>
+                    </div>
+                    <a href="#" class="active" style="padding-bottom: 30px;" >1</a>
+
+                    <div class="ap-next">
+                        <a href="article.html"><img style="  width: 42.2px;height: 28.8px;" src="assets/icons/kanan.png"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="ap-right">
+                <div class="ap-recent  wow fadeInRight">
+                    Artikel Terbaru
+                    <div class="ap-recent-post">
+                        <div class="ap-recent-title">
+                            Jelajahilah Pulau Belitung
+                        </div>
+                        <div class="ap-recent-desc">
+                            6 menit yang lalu / Belitung
+                        </div>
+                    </div>
+                    <div class="ap-recent-post">
+                        <div class="ap-recent-title">
+                            Secuil Hamparan Surga di Bumi Ponorogo
+                        </div>
+                        <div class="ap-recent-desc">
+                            6 menit yang lalu / Jawa Tengah
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="content container ">
+            <div class="title">
+                Berlangganan Artikel
+            </div>
+            <div class="sub-title">
+                Selalu update tentang pariwisata Indonesia
+            </div>
+            <div class="subscribe">
+                <input type="text" placeholder="Email">
+                <a href="#">
+                    <button>Langganan</button>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="left">
+                    travelID
+                </div>
+                <div class="right">
+                    © 2018. travelID. All Right Reserved
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</body>

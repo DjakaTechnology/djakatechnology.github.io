@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <style type="text/css">
+        .subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="initialize()" style="background-color: #fbfbfb">
+    <div id="navbar" class="navbar article-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>travelID</h1>
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="tourism.html" class="active">Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tourism-detail-page">
+        <div class="tdp-banner" style="background-image: url('assets/images/nusa/4.jpg')!important; ">
+            <div class="container">
+                <div class="tdp-banner-text">
+                    <div class="tdp-title">
+                        Pantai Nusa Dua
+                    </div>
+                    <div class="tdp-location">
+                        <img src="assets/icons/shape.png" style="height: 36px;margin-bottom : -6px"> Pantai Nusa Dua, Bali
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tdp-content">
+                <div class="tdp-left">
+                    <div class="tdp-nav">
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-detail" type="button" class="primary-btn active" onClick="tourismNav('detail')">Penjelasan</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-history" type="button" class="primary-btn" onClick="tourismNav('history')">Sejarah</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-map" type="button" class="primary-btn" onClick="tourismNav('map')">Peta</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-gallery" type="button" class="primary-btn" onClick="tourismNav('gallery')">Galeri</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tdp-right">
+                    <div id="tdp-detail">
+                        <p>Nusa Dua adalah merupakan sebuah tanjung yang terletak di tenggara pulau Bali. Jaraknya terletak kurang lebih 40 kilometer dari Denpasar ibukota provinsi Bali.
+
+Nusa Dua juga merupakan lokasi Konferensi PBB tentang Perubahan Iklim 2008 antara 3 Desember dan 14 Desember 2007.
+                        </p><br>
+                        <p><br>
+                       Nusa Dua juga merupakan lokasi Konferensi PBB tentang Perubahan Iklim 2008 antara 3 Desember dan 14 Desember 2007.</p><br>
+                        <br>
+                    </div>
+                    <div id="tdp-history"><p>Selain nilai wisata, Pantai Nusa Dua pun memiliki nilai sejarah atau cerita yang unik. Begini ceritanya ! Cerita rakyat bali mengatakan bahwa dulu pantai nusa dua ini merupakan pantai tempat hukuman bagi masyarakat yang berbuat kesalahan. Sehingga pantai ini menjadi tempat pembuangan orang bersalah di masyarakat, sebab pantai ini pada waktu itu sangat tandus , dengan kondisi seperti itu mereka hanya makan dari apa yang mereka dapat di pantai ini. Seperti halnya masyarakat bias yang melakukan kesalahan, pendek cerita ada dua orang ksatria yang di hukum dan di buang ke tempat ini, kedua kesatria ini bertarung di pantai ini untuk merebut kekuasaan, akan tetapi sebelum bertarung mereka meletakkan pikulan mereka di pinggir pantai. Setelah mereka bertarung, ternyata mereka memiliki kemampuan yang sama hebatnya. Hingga akhirnya mereka memutuskan untuk membagi kekuasaan. Pemisah daerah kekuasaan itu adalah barang pikulan mereka yg mereka letakkan di pinggir pantai sebelum bertarung. Itulah awal mula cerita dari pantai nusa dua.
+                    </p><br>
+
+               </div>
+                <div id="tdp-map">
+                    <img src="assets/images/map.jpg">
+                </div>
+                <div id="tdp-gallery">
+                    <div class="tdp-gallery-list">
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="content container">
+        <div class="title">
+            Berlangganan Artikel
+        </div>
+        <div class="sub-title">
+            Selalu update tentang pariwisata Indonesia
+        </div>
+        <div class="subscribe">
+            <input type="text" placeholder="Email">
+            <a href="#">
+                <button>Langganan</button>
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="left">
+                travelID
+            </div>
+            <div class="right">
+                © 2018. travelID. All Right Reserved
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>

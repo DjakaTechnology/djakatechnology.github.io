@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/animate.css">
+    <style type="text/css">
+        .subscribe ::placeholder,
+        #header select::placeholder,
+        #header input::placeholder {
+            /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1;
+            /* Firefox */
+        }
+
+        :-ms-input-placeholder {
+            /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder {
+            /* Microsoft Edge */
+            color: white;
+        }
+
+        @media screen and (max-width: 720px) {
+            .typograph-bg {
+                font-size: 100px
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .typograph-bg {
+                font-size: 90px
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .typograph-bg {
+                font-size: 80px
+            }
+        }
+
+        @media screen and (max-width:480px) {
+            .typograph-bg {
+                font-size: 73px
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            .typograph-bg {
+                font-size: 50px;
+            }
+            .typograph-text a {
+                left: 0;
+                top: 150px;
+            }
+        }
+    </style>
+</head>
+
+<body onload="initialize()">
+    <div id="navbar" class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;color: white;">
+                    <h1>travelID</h1>
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <b>
+                            <a href="index.html">Beranda</a>
+                        </b>
+                    </li>
+                    <li>
+                        <a href="tourism.html">Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="header" class="header-home">
+        <div class="container">
+            <div class="banner-content wow fadeInUp">
+                <div class="banner-title">
+                    <h1>Wujudkan Impianmu</h1>
+                </div>
+                <div class="banner-desc">
+                    <p>Mempunyai tempat impian yang belum dikunjungi ? Kami akan membantu penghitungan berdasarkan data yang anda berikan</p>
+                    <form id="calc-form" action="#" method="get">
+                        <div class="calc-1">
+                            <input id="destination" style="border-radius: 4px 0 0 4px" placeholder="Tujuan Anda ?" type="text">
+                            <input id="people-qty" placeholder="Berapa Orang ?" type="text">
+                            <select id="calcType" style="border-radius: 0 4px 4px 0" placeholder="Pilih Kalkulasi" onchange="calcChanged()">
+                                <option>Pilih Tipe</option>
+                                <option value="price">Biaya</option>
+                                <option value="date">Tanggal Keberangkatan</option>
+                            </select>
+                        </div>
+                        <div class="calc-2">
+                            <input style="border-radius: 4px 0 0 4px" placeholder="Tujuan Anda ?" type="text">
+                            <input id="people-qty" placeholder="Berapa Orang ?" type="text">
+                            <button class="banner-button" type="submit" onclick="tsahShow()">CEK</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="tsah">
+            <div class="tsah-close">
+                <button class="close" onclick="tsahClose()">&nbsp;</button>
+            </div>
+            <div class="tsah-title">
+                <h1>Hasil Kalkulasi</h1>
+            </div>
+            <div class="tsah-form">
+                <div class="container">
+                    <form id="tsah-form" action="#" method="get">
+                        <div class="tsah-1">
+                            <input id="tsah-destination" style="border-radius: 4px 0 0 4px" placeholder="Tujuan Anda ?" type="text">
+                            <input id="tsah-people-qty" placeholder="Berapa Orang ?" type="text">
+                            <select id="tsah-calcType" style="border-radius: 0 4px 4px 0" placeholder="Pilih Kalkulasi" onchange="calcChanged()">
+                                <option>Pilih Tipe</option>
+                                <option value="price">Biaya</option>
+                                <option value="date">Tanggal Keberangkatan</option>
+                            </select>
+                        </div>
+                        <div class="tsah-2">
+                            <input style="border-radius: 4px 0 0 4px" placeholder="Tujuan Anda ?" type="text">
+                            <input id="tsah-people-qty" placeholder="Berapa Orang ?" type="text">
+                        </div>
+                    </form>
+                    <div class="tsah-result">
+                        <div id="tsah-card-1">
+                            <div class="tsah-pack">
+                                Paket Ekonomi
+                            </div>
+                            <div class="tsah-price">
+                                Rp. 3.214.000
+                            </div>
+                            <div class="tsah-facility">
+                                <div class="tsah-facility-1">
+                                    <img src="assets/icons/hotel-tower.png">Hotel Bintang 3
+                                </div>
+                                <div class="tsah-facility-2">
+                                    <img src="assets/icons/plane.png">Air Asia (Pulang Pergi)
+                                </div>
+                            </div>
+                        </div>
+                        <div id="tsah-alt">
+                            <div class="tsah-pack">
+                                Paket Eksekutif
+                            </div>
+                            <div class="tsah-price">
+                                Rp. 5.831.000
+                            </div>
+                            <div class="tsah-facility">
+                                <div class="tsah-facility-1">
+                                    <img src="assets/icons/hotel-tower.png">Hotel Bintang 5
+                                </div>
+                                <div class="tsah-facility-2">
+                                    <img src="assets/icons/plane.png">Air Asia (Pulang Pergi)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tourism" class="wow fadeInLeft">
+        <div class="container">
+            <div class="title">
+                <div class="typograph">
+                    <div class="typograph-bg">
+                        Pariwisata
+                    </div>
+                    <div class="typograph-text">
+                        Pariwisata
+                    </div>
+                    <div class="typograph-text" style="right: 0; top: 100px; ">
+                        <a href="tourism.html"> Lihat Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-title">
+                <p>Lihat wisata dari beberapa daerah di Indonesia yang sangat indah ini.</p>
+            </div>
+            <div class="content">
+                <div id="tab-container">
+                    <div class="tab">
+                        <span id="tab-1">
+                            <a href="#jawa" class="active">Jawa Tengah</a>
+                        </span>
+                        <span id="tab-2">
+                            <a href="#sumatra">Sumatra</a>
+                        </span>
+                        <span id="tab-3">
+                            <a href="#kalimantan">Kalimantan</a>
+                        </span>
+                        <span id="tab-4">
+                            <a href="#jakarta">Jakarta</a>
+                        </span>
+                        <span id="tab-5">
+                            <a href="#bali">Bali</a>
+                        </span>
+                        <span id="tab-6">
+                            <a href="#papua">Papua</a>
+                        </span>
+                        <span id="tab-7">
+                            <a href="#ntt">Nusa Tenggara Timur</a>
+                        </span>
+                        <span id="tab-8">
+                            <a href="#maluku">Maluku</a>
+                        </span>
+                    </div>
+                    <div class='panel-container'>
+                        <div id="jawa">
+                            <div id="jawa-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/borobudur.png">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Candi Borobudur</h1>
+                                    <h3>Jawa Tengah, Magelang</h3>
+                                    <p>Borobudur adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah,
+                                        Indonesia. Candi ini berlokasi di kurang lebih 100 km di sebelah barat daya Semarang,
+                                        86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut Yogyakarta. Candi
+                                        berbentuk stupa ini didirikan oleh para penganut agama Buddha Mahayana sekitar abad
+                                        ke-8 masehi pada masa pemerintahan wangsa Syailendra. Borobudur adalah candi atau
+                                        kuil Buddha terbesar di dunia, sekaligus salah satu monumen Buddha terbesar di dunia.</p>
+                                </div>
+                            </div>
+                            <div id="jawa-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/karimun.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Taman Nasional Karimunjawa</h1>
+                                    <h3>Kabupaten Jepara, Semarang</h3>
+                                    <p>Taman Nasional Karimunjawa ~ Kabupaten Jepara memang mempunyai banyak tempat wisata berupa
+                                        pulau dan pantai. Di dekat pusat pulau jawa saja ada dua pulau yang cukup dekat,
+                                        yaitu Pulau Panjang di dekat Pantai Kartini dan Pulau Mandalika di dekat taman wisata
+                                        Benteng Portugis. Namun ada satu kumpulan pulau dalam jumlah banyak yang sudah terkenal,
+                                        yaitu Kepulauan Karimunjawa. Taman Nasional Karimunjawa adalah kawasan andalan Kabupaten
+                                        Jepara dalam sektor pariwisata berupa wisata alam yang merupakan gugusan kepulauan
+                                        berjumlah 27 yang terletak di Laut Jawa.</p>
+                                </div>
+                            </div>
+                            <div id="jawa-2">
+                                <div class="tourism-img">
+                                    <img src="assets/images/ambarawa.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Museum Kereta Api Ambarawa</h1>
+                                    <h3>Ambarawa</h3>
+                                    <p>Museum Kereta Api Ambarawa adalah sebuah stasiun kereta api yang sekarang dialihfungsikan
+                                        menjadi sebuah museum di Ambarawa, Jawa Tengah yang memiliki kelengkapan kereta api
+                                        yang pernah berjaya pada zamannya. Salah satu kereta api uap dengan lokomotif nomor
+                                        B 2502 dan B 2503 buatan Maschinenfabrik Esslingen, serta B 5112 buatan Hannoversche
+                                        Maschinenbau AG, sampai sekarang masih dapat menjalankan aktivitas sebagai kereta
+                                        api wisata. Kereta api uap bergerigi ini sangat unik dan merupakan salah satu dari
+                                        tiga yang masih tersisa di dunia. Dua di antaranya ada di Swiss dan India.</p>
+                                </div>
+                            </div>
+                            <div id="jawa-3">
+                                <div class="tourism-img">
+                                    <img src="assets/images/dieng.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Dataran Tinggi Dieng</h1>
+                                    <h3>Wonosobo</h3>
+                                    <p>Dataran Tinggi Dieng adalah kawasan vulkanik aktif di Jawa Tengah, yang masuk wilayah
+                                        Kabupaten Banjarnegara dan Kabupaten Wonosobo. Letaknya berada di sebelah barat kompleks
+                                        Gunung Sindoro dan Gunung Sumbing. Dieng memiliki Ketinggian rata-rata adalah sekitar
+                                        2.000 m di atas permukaan laut. Suhu berkisar 12—20 °C di siang hari dan 6—10 °C
+                                        di malam hari. Pada musim kemarau (Juli dan Agustus), suhu udara dapat mencapai 0
+                                        °C di pagi hari dan memunculkan embun beku yang oleh penduduk setempat disebut bun
+                                        upas ("embun racun") karena menyebabkan kerusakan pada tanaman pertanian.</p>
+                                </div>
+                            </div>
+                            <div id="jawa-4">
+                                <div class="tourism-img">
+                                    <img src="assets/images/baturaden.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Baturaden</h1>
+                                    <h3>Baturaden, Banyumas</h3>
+                                    <p>Lokawisata Baturaden (atau Baturaden saja) terletak di sebelah selatan Gunung Slamet
+                                        memiliki udara sejuk dan cenderung bertambah dingin di malam hari. Selain memiliki
+                                        panorama alam yang cantik, Baturaden juga memiliki banyak legenda rakyat, salah satunya
+                                        cerita lutung kasarung yang terkenal. Baturraden terletak di sebelah utara kota Purwokerto
+                                        tepat di lereng sebelah selatan Gunung Slamet. Baturraden karena letaknya di lereng
+                                        gunung menjadikan kawasan ini memiliki hawa yang sejuk dan cenderung sangat dingin
+                                        terutama di malam hari. </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="sumatra">
+                            <div id="sumatra-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/toba.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Danau Toba</h1>
+                                    <h3>Sumatra Utara</h3>
+                                    <p>Danau Toba adalah sebuah danau alam besar tekto-vulkanik yang menempati kaldera dari
+                                        sebuah supervulkan. Danau ini memiliki ukuran panjang sekitar 100 kilometer, lebar
+                                        sekitar 30 kilometer, dan kedalaman hingga 505 meter (1.666 kaki), terletak di Provinsi
+                                        Sumatera Utara, Indonesia. Danau Toba merupakan danau terbesar di Indonesia dan Asia
+                                        Tenggara. Di tengah danau ini terdapat sebuah pulau vulkanik bernama Pulau Samosir.</p>
+                                </div>
+                            </div>
+                            <div id="sumatra-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/maimun.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Istana Maimun</h1>
+                                    <h3>Medan, Sumatera Utara</h3>
+                                    <p>Istana Maimun adalah istana Kesultanan Deli yang merupakan salah satu ikon kota Medan,
+                                        Sumatera Utara, terletak di Jalan Brigadir Jenderal Katamso, Kelurahan Sukaraja,
+                                        Kecamatan Medan Maimun. Didesain oleh arsitek Italia dan dibangun oleh Sultan Deli,
+                                        Sultan Mahmud Al Rasyid. Pembangunan istana ini dimulai dari 26 Agustus 1888 dan
+                                        selesai pada 18 Mei 1891. Istana Maimun memiliki luas sebesar 2.772 m2 dan 30 ruangan.</p>
+                                </div>
+                            </div>
+                            <div id="sumatra-2">
+                                <div class="tourism-img">
+                                    <img src="assets/images/gadang.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Jam Gadang</h1>
+                                    <h3>Bukittinggi, Sumatera Barat</h3>
+                                    <p>Jam Gadang adalah nama untuk menara jam yang terletak di pusat kota Bukittinggi, Sumatera
+                                        Barat, Indonesia. Menara jam ini memiliki jam dengan ukuran besar di empat sisinya
+                                        sehingga dinamakan Jam Gadang, sebutan bahasa Minangkabau yang berarti "jam besar".
+                                        Selain sebagai pusat penanda kota Bukittinggi, Jam Gadang juga telah dijadikan sebagai
+                                        objek wisata dengan diperluasnya taman di sekitar menara jam ini. Taman tersebut
+                                        menjadi ruang interaksi masyarakat baik di hari kerja maupun di hari libur. Acara-acara
+                                        yang sifatnya umum biasanya diselenggarakan di sekitar taman dekat menara jam ini.</p>
+                                </div>
+                            </div>
+                            <div id="sumatra-3">
+                                <div class="tourism-img">
+                                    <img src="assets/images/tsunami.jpeg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Museum Tsunami Aceh</h1>
+                                    <h3>Banda Aceh, Sumatera Utara</h3>
+                                    <p>Museum Tsunami Aceh (bahasa Inggris: Aceh Tsunami Museum) adalah sebuah museum di Banda
+                                        Aceh yang dirancang sebagai monumen simbolis untuk bencana gempa bumi dan tsunami
+                                        Samudra Hindia 2004 sekaligus pusat pendidikan dan tempat perlindungan darurat andai
+                                        tsunami terjadi lagi.</p>
+                                </div>
+                            </div>
+                            <div id="sumatra-3">
+                                <div class="tourism-img">
+                                    <img src="assets/images/toba.png">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Jembatan Ampera </h1>
+                                    <h3>Palembang, Sumatera Selatan</h3>
+                                    <p>Jembatan Ampera adalah sebuah jembatan di Kota Palembang, Provinsi Sumatera Selatan,
+                                        Indonesia. Jembatan Ampera, yang telah menjadi semacam lambang kota, terletak di
+                                        tengah-tengah kota Palembang, menghubungkan daerah Seberang Ulu dan Seberang Ilir
+                                        yang dipisahkan oleh Sungai Musi.</p>
+                                </div>
+                            </div>
+                            <div id="sumatra-4">
+                                <div class="tourism-img">
+                                    <img src="assets/images/siger.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Menara Siger </h1>
+                                    <h3>Lampung Selatan</h3>
+                                    <p>Menara Siger adalah menara yang juga menjadi titik nol Sumatra di Jalan Raya Bumi Sari
+                                        Natar Gang Bima Ruko Orange. Gubernur Lampung Sjachroedin Z.P. dalam peresmian Menara
+                                        Siger, 30 April 2008, menyatakan optimistis Menara Siger akan mendorong kemajuan
+                                        Lampung. Peresmian ini ditandai dengan penekanan sirine, penandatanganan prasasti,
+                                        serta penglepasan merpati bersama puluhan duta besar.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="sumatra">
+                            <div class="tourism-img">
+                                <img src="assets/images/toba.jpg">
+                            </div>
+                            <div class="tourism-desc">
+                                <h1>Danau Toba</h1>
+                                <h3>Sumatra Utara</h3>
+                                <p>Danau Toba adalah sebuah danau alam besar tekto-vulkanik yang menempati kaldera dari sebuah
+                                    supervulkan. Danau ini memiliki ukuran panjang sekitar 100 kilometer, lebar sekitar 30
+                                    kilometer, dan kedalaman hingga 505 meter (1.666 kaki), terletak di Provinsi Sumatera
+                                    Utara, Indonesia. Danau Toba merupakan danau terbesar di Indonesia dan Asia Tenggara.
+                                Di tengah danau ini terdapat sebuah pulau vulkanik bernama Pulau Samosir.</p>
+                            </div>
+                        </div> -->
+                        <div id="kalimantan">
+                            <div id="kalimantan-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/kalimantan.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Danau Labuan Cermin</h1>
+                                    <h3>Kalimantan Timur</h3>
+                                    <p>Biduk biduk, Kabupaten Berau, Kalimantan Timur. Banyak orang yang salah paham tentang
+                                        keberadaan danau ini. Tidak sedikit orang yang beranggapan bahwa danau ini berada
+                                        di Balikpapan. Danau ini terkenal karena kejernihan air nya yang sangat bening. Bahkan
+                                        ketika terdapat objek diatas danau tersebut nampak seperti diatas kaca, dan ranting
+                                        ranting yang terdapat di dasar danau dapat terlihat sangat jelas sekali.</p>
+                                </div>
+                            </div>
+                            <div id="kalimantan-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/puting.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Taman Nasional Tanjung Puting</h1>
+                                    <h3>Kalimantan</h3>
+                                    <p>Taman Nasional Tanjung Puting adalah sebuah taman nasional yang terletak di semenanjung
+                                        barat daya provinsi Kalimantan Tengah. Tanjung Puting pada awalnya merupakan cagar
+                                        alam dan suaka margasatwa yang ditetapkan oleh Pemerintah Hindia Belanda pada tahun
+                                        1937. Selanjutnya berdasarkan SK Menteri Kehutanan No. 687/Kpts-II/1996 tanggal 25
+                                        Oktober 1996, Tanjung Puting ditunjuk sebagai Taman Nasional dengan luas seluruhnya
+                                        415.040 ha.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="kalimantan">
+                            <div class="tourism-img">
+                                <img src="assets/images/kalimantan.jpg">
+                            </div>
+                            <div class="tourism-desc">
+                                <h1>Danau Labuan Cermin</h1>
+                                <h3>Kalimantan Timur</h3>
+                                <p>Biduk biduk, Kabupaten Berau, Kalimantan Timur. Banyak orang yang salah paham tentang keberadaan
+                                    danau ini. Tidak sedikit orang yang beranggapan bahwa danau ini berada di Balikpapan.
+                                    Danau ini terkenal karena kejernihan air nya yang sangat bening. Bahkan ketika terdapat
+                                    objek diatas danau tersebut nampak seperti diatas kaca, dan ranting ranting yang terdapat
+                                di dasar danau dapat terlihat sangat jelas sekali.</p>
+                            </div>
+                        </div> -->
+                        <div id="jakarta">
+                            <div id="jakarta-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/jakarta.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Pulau Tidung</h1>
+                                    <h3>Pulau Tidung, Pulau Seribu, Jakarta</h3>
+                                    <p>Pulau Tidung adalah salah satu kelurahan di kecamatan Kepulauan Seribu Selatan, Kabupaten
+                                        Kepulauan Seribu, Jakarta, Indonesia. Pulau tidung ini terbagi dua yaitu, Pulau Tidung
+                                        Besar dan Pulau Tidung Kecil. Penggunaan wilayah di pulau ini berkembang ke arah
+                                        wisata bahari seperti menyelam serta penelitian terhadap terumbu karang.</p>
+                                </div>
+                            </div>
+                            <div id="jakarta-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/ancol.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Taman Impian Jaya Ancol</h1>
+                                    <h3>Jakarta</h3>
+                                    <p>Taman Impian Jaya Ancol merupakan sebuah objek wisata di Jakarta Utara. Sebagai komunitas
+                                        pembaharuan kehidupan masyarakat yang menjadi kebanggaan bangsa. Senantiasa menciptakan
+                                        lingkungan sosial yang lebih baik melalui sajian hiburan berkualitas yang berunsur
+                                        seni, budaya dan pengetahuan, dalam rangka mewujudkan komunitas 'Life Re-Creation'
+                                        yang menjadi kebanggaan bangsa.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="jakarta">
+                            <div class="tourism-img">
+                                <img src="assets/images/jakarta.jpg">
+                            </div>
+                            <div class="tourism-desc">
+                                <h1>Pulau Tidung</h1>
+                                <h3>Pulau Tidung, Pulau Seribu, Jakarta</h3>
+                                <p>Pulau Tidung adalah salah satu kelurahan di kecamatan Kepulauan Seribu Selatan, Kabupaten
+                                    Kepulauan Seribu, Jakarta, Indonesia. Pulau tidung ini terbagi dua yaitu, Pulau Tidung
+                                    Besar dan Pulau Tidung Kecil. Penggunaan wilayah di pulau ini berkembang ke arah wisata
+                                bahari seperti menyelam serta penelitian terhadap terumbu karang.</p>
+                            </div>
+                        </div> -->
+                        <div id="bali">
+                            <div id="bali-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/bali.jpeg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Taman Budaya Garuda Wisnu Kencana</h1>
+                                    <h3>Bali</h3>
+                                    <p>Taman Budaya Garuda Wisnu Kencana (bahasa Inggris: Garuda Wisnu Kencana Cultural Park),
+                                        disingkat GWK, adalah sebuah taman wisata di bagian selatan pulau Bali. Taman wisata
+                                        ini terletak di tanjung Nusa Dua, Kabupaten Badung, kira-kira 40 kilometer di sebelah
+                                        selatan Denpasar, ibu kota provinsi Bali. Di areal taman budaya ini, direncanakan
+                                        akan didirikan sebuah landmark atau maskot Bali, yakni patung berukuran raksasa Dewa
+                                        Wisnu yang sedang menunggangi tunggangannya, Garuda, setinggi 120 meter.</p>
+                                </div>
+                            </div>
+                            <div id="bali-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/pandawa.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Pantai Pandawa</h1>
+                                    <h3>Bali</h3>
+                                    <p>Pantai Pandawa adalah salah satu kawasan wisata di area Kuta selatan, Kabupaten Badung,
+                                        Bali. Pantai ini terletak di balik perbukitan dan sering disebut sebagai Pantai Rahasia
+                                        (Secret Beach). Di sekitar pantai ini terdapat dua tebing yang sangat besar yang
+                                        pada salah satu sisinya dipahat lima patung Pandawa[1] dan Kunti. Keenam patung tersebut
+                                        secarara berurutan (dari posisi tertinggi) diberi penejasan nama Dewi Kunti, Dharma
+                                        Wangsa, Bima, Arjuna, Nakula, dan Sadewa.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="bali">
+                            <div class="tourism-img">
+                                <img src="assets/images/bali.jpeg">
+                            </div>
+                            <div class="tourism-desc">
+                                <h1>Taman Budaya Garuda Wisnu Kencana</h1>
+                                <h3>Bali</h3>
+                                <p>Taman Budaya Garuda Wisnu Kencana (bahasa Inggris: Garuda Wisnu Kencana Cultural Park), disingkat
+                                    GWK, adalah sebuah taman wisata di bagian selatan pulau Bali. Taman wisata ini terletak
+                                    di tanjung Nusa Dua, Kabupaten Badung, kira-kira 40 kilometer di sebelah selatan Denpasar,
+                                    ibu kota provinsi Bali. Di areal taman budaya ini, direncanakan akan didirikan sebuah
+                                    landmark atau maskot Bali, yakni patung berukuran raksasa Dewa Wisnu yang sedang menunggangi
+                                tunggangannya, Garuda, setinggi 120 meter.</p>
+                            </div>
+                        </div> -->
+                        <div id="papua">
+                            <div id="papua-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/puncakjaya.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Puncak Jaya Wijaya</h1>
+                                    <h3>Papua</h3>
+                                    <p>Puncak Jaya atau Carstensz Pyramid ialah sebuah puncak yang menjadi bagian dari Barisan
+                                        Sudirman yang terdapat di Provinsi Papua, Indonesia. Puncak Jaya mempunyai ketinggian
+                                        4.884 m dan di sekitarnya terdapat gletser Carstensz, satu-satunya gletser tropika
+                                        di Indonesia, yang kemungkinan besar segera akan lenyap akibat pemanasan global.[butuh
+                                        rujukan] Puncak ini merupakan gunung yang tertinggi di Indonesia kawasan Oceania.
+                                        Puncak Jaya adalah salah satu dari tujuh puncak dunia.</p>
+                                </div>
+                            </div>
+                            <div id="papua-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/lorentz.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Taman Nasional Lorentz</h1>
+                                    <h3>Papua</h3>
+                                    <p>Taman Nasional Lorentz adalah sebuah taman nasional yang terletak di provinsi Papua,
+                                        Indonesia. Dengan luas wilayah sebesar 2,4 juta Ha; Lorentz merupakan taman nasional
+                                        terbesar di Asia Tenggara. Taman ini masih belum dipetakan, dijelajahi dan banyak
+                                        terdapat tanaman asli, hewan dan budaya. Pada 1999 taman nasional ini diterima sebagai
+                                        Situs Warisan Dunia UNESCO.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="papua">
+                            <div class="tourism-img">
+                                <img src="assets/images/puncakjaya.jpg">
+                            </div>
+                            <div class="tourism-desc">
+                                <h1>Puncak Jaya Wijaya</h1>
+                                <h3>Papua</h3>
+                                <p>Puncak Jaya atau Carstensz Pyramid ialah sebuah puncak yang menjadi bagian dari Barisan Sudirman
+                                    yang terdapat di Provinsi Papua, Indonesia. Puncak Jaya mempunyai ketinggian 4.884 m
+                                    dan di sekitarnya terdapat gletser Carstensz, satu-satunya gletser tropika di Indonesia,
+                                    yang kemungkinan besar segera akan lenyap akibat pemanasan global.[butuh rujukan] Puncak
+                                    ini merupakan gunung yang tertinggi di Indonesia kawasan Oceania. Puncak Jaya adalah
+                                salah satu dari tujuh puncak dunia.</p>
+                            </div>
+                        </div> -->
+                        <div id="ntt">
+                            <div id="ntt-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/ntt.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Gunung Kelimutu</h1>
+                                    <h3>Pulau Flores, Nusa Tenggara Timur</h3>
+                                    <p>Gunung Kelimutu adalah gunung berapi yang terletak di Pulau Flores, Provinsi NTT, Indonesia.
+                                        Lokasi gunung ini tepatnya di Desa Pemo, Kecamatan Kelimutu, Kabupaten Ende. Gunung
+                                        ini memiliki tiga buah danau kawah di puncaknya. Danau ini dikenal dengan nama Danau
+                                        Tiga Warna karena memiliki tiga warna yang berbeda, yaitu merah, biru, dan putih.</p>
+                                </div>
+                            </div>
+                            <div id="ntt-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/komodo.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Taman Nasional Komodo</h1>
+                                    <h3>Nusa Tenggara Timur & Nusa Tenggara Barat</h3>
+                                    <p>Taman Nasional Komodo terletak di antara provinsi Nusa Tenggara Timur dan Nusa Tenggara
+                                        Barat. Taman nasional ini terdiri atas tiga pulau besar Pulau Komodo, Pulau Rinca,
+                                        dan Pulau Padar serta beberapa pulau kecil. Wilayah darat taman nasional ini 603
+                                        km² dan wilayah total adalah 1817 km².</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="ntt">
+                            <div class="tourism-img">
+                                <img src="assets/images/ntt.jpg">
+                            </div>
+                            <div class="tourism-desc">
+                                <h1>Gunung Kelimutu</h1>
+                                <h3>Pulau Flores, Nusa Tenggara Timur</h3>
+                                <p>Gunung Kelimutu adalah gunung berapi yang terletak di Pulau Flores, Provinsi NTT, Indonesia.
+                                    Lokasi gunung ini tepatnya di Desa Pemo, Kecamatan Kelimutu, Kabupaten Ende. Gunung ini
+                                    memiliki tiga buah danau kawah di puncaknya. Danau ini dikenal dengan nama Danau Tiga
+                                    Warna karena memiliki tiga warna yang berbeda, yaitu merah, biru, dan putih. Walaupun
+                                    begitu, warna-warna tersebut selalu berubah-ubah seiring dengan perjalanan waktu. Kelimutu
+                                    merupakan gabungan kata dari "keli" yang berarti gunung dan kata "mutu" yang berarti
+                                    mendidih. Menurut kepercayaan penduduk setempat, warna-warna pada danau Kelimutu memiliki
+                                arti masing-masing dan memiliki kekuatan alam yang sangat dahsyat.</p>
+                            </div>
+                        </div> -->
+                        <div id="maluku">
+                            <div id="maluku-0">
+                                <div class="tourism-img">
+                                    <img src="assets/images/banda.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Kepulauan Banda</h1>
+                                    <h3>Kepulauan Banda, Maluku</h3>
+                                    <p>Kepulauan Banda terdiri dari sepuluh pulau vulkanis yang tersebar di Laut Banda, ±140
+                                        km sebelah selatan Pulau Seram dan 2.000 km sebelah timur Pulau Jawa. Kepulauan seluas
+                                        180 km² ini termasuk dalam wilayah Provinsi Maluku. Kota terbesarnya, Bandanaira,
+                                        terletak di pulau dengan nama yang sama. Sekitar 15.000 jiwa tinggal di kepulauan
+                                        ini. Kepulauan ini populer bagi penggemar selam scuba dan snorkeling. Hingga pertengahan
+                                        abad ke-19, Kepulauan Banda merupakan satu-satunya sumber rempah-rempah pala. Kepulauan
+                                        Banda pun di daftarkan sebagai salah satu Situs Warisan Dunia UNESCO pada tahun 2005.</p>
+                                </div>
+                            </div>
+                            <div id="maluku-1">
+                                <div class="tourism-img">
+                                    <img src="assets/images/gong.jpg">
+                                </div>
+                                <div class="tourism-desc">
+                                    <h1>Gong Perdamaian Dunia</h1>
+                                    <h3>Maluku</h3>
+                                    <p>Gong Perdamaian Dunia adalah sebuah gong yang merupakan sebagai simbol perdamaian dunia.
+                                        Gong Perdamaian Dunia telah ditempatkan di beberapa daerah yaitu Bali, Ambon, Palu,
+                                        dll. Tujuan Gong Perdamaian Dunia adalah supaya tidak ada lagi perang, konflik sara,
+                                        terorisme, dll. Museum Gong Perdamaian Dunia terdapat di Jepara tepatnya di Desa
+                                        Plajan, Museum ini diresmikan oleh Mentri PU.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div id="maluku">
+                            <div class="tourism-img">
+                                <img src="assets/images/banda.jpg">
+                            </div>
+                            <div class="tourism-desc">
+                                <h1>Kepulauan Banda</h1>
+                                <h3>Kepulauan Banda, Maluku</h3>
+                                <p>Kepulauan Banda terdiri dari sepuluh pulau vulkanis yang tersebar di Laut Banda, ±140 km
+                                    sebelah selatan Pulau Seram dan 2.000 km sebelah timur Pulau Jawa. Kepulauan seluas 180
+                                    km² ini termasuk dalam wilayah Provinsi Maluku. Kota terbesarnya, Bandanaira, terletak
+                                    di pulau dengan nama yang sama. Sekitar 15.000 jiwa tinggal di kepulauan ini. Kepulauan
+                                    ini populer bagi penggemar selam scuba dan snorkeling. Hingga pertengahan abad ke-19,
+                                    Kepulauan Banda merupakan satu-satunya sumber rempah-rempah pala. Kepulauan Banda pun
+                                di daftarkan sebagai salah satu Situs Warisan Dunia UNESCO pada tahun 2005.</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div id="sub-nav-0" class="sub-nav">
+                <button class="next nav-interactive" onclick="subTab(0, 1)" />
+                <button class="back nav-noninteractive" onclick="subTab(0, -1)" />
+            </div>
+        </div>
+    </div>
+    <div id="gallery" class="wow fadeInLeft">
+        <div class="container">
+            <div class="title">
+                <div class="typograph">
+                    <div class="typograph-bg">
+                        Gallery
+                    </div>
+                    <div class="typograph-text">
+                        Gallery
+                    </div>
+                    <div class="typograph-text" style="right: 0; top: 100px; ">
+                        <a href="gallery.html"> Lihat Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-title">
+                <p>Ayo lihat keindahan Indonesia yang ada disini.</p>
+            </div>
+            <div class="content">
+                <div class="quarter">
+                    <div class="img-1">
+                        <img src="assets/images/andy-writh.jpg">
+                    </div>
+                    <div class="img-2">
+                        <img src="assets/images/harry-kessell.jpg">
+                    </div>
+                    <div class="img-3">
+                        <img src="assets/images/harman-abiwardan.jpg">
+                    </div>
+                </div>
+                <div class="img-4">
+                    <img src="assets/images/sebastian-staines.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="article" class="wow bounceInLeft">
+        <div class="container">
+            <div class="title">
+                <div class="typograph">
+                    <div class="typograph-bg" style="text-align:center">
+                        Artikel
+                    </div>
+                    <div class="typograph-text" style="left:50%;margin-left:-48.375px">
+                        Artikel
+                    </div>
+                </div>
+            </div>
+            <div class="sub-title" style="text-align:center;margin: auto;">
+                <p>Berita ter-update tentang wisata yang ada di Indonesia.</p>
+            </div>
+            <div class="content">
+                <a href="article-detail-belitung.html">
+                    <div class="post">
+                        <div class="post-img">
+                            <img src="assets/images/belitung_artikel.jpg">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-title" style="color: #555555">
+                                Jelajahilah Pulau Belitung
+                            </div>
+                            <div class="post-location" style="color: rgba(85, 85, 85, 0.5);">
+                                <img src="assets/icons/placeholder.png" width="18px;padding-top:10px;"> Pulau Belitung
+                            </div>
+                            <div class="post-desc" style="color: rgba(85, 85, 85, 0.6);">
+                                Seiring dengan melajunya popularitas novel sekaligus film karangan Andrea Hirata, secara tak langsung juga mendongkrak Pulau
+                                Belitung menjadi destinasi alternatif bagi para traveler. Bahkan, tak jarang ...
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="article-detail-ponorogo" style="text-decoration: none;">
+                    <div class="post">
+                        <div class="post-img">
+                            <img src="assets/images/ponorogo_artikel.jpg">
+                        </div>
+                        <div class="post-content">
+                            <div class="post-title" style="color: #555555">
+                                Secuil Hamparan Surga di Bumi Ponorogo
+                            </div>
+                            <div class="post-location" style="color: rgba(85, 85, 85, 0.5);">
+                                <img src="assets/icons/placeholder.png" width="18px;padding-top:10px;"> Ponorogo
+                            </div>
+                            <div class="post-desc" style="color: rgba(85, 85, 85, 0.6);">
+                                Bereksplorasi ke Jawa Timur seolah tiada berujung. Bagai sebuah sumur vakansi yang tidak memiliki dasar. Banyak banget wisata
+                                yang bisa kamu jamah di Jawa Timur. Dari mulai ...
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div id="footer">
+        <div class="content container">
+            <div class="title">
+                Berlangganan Artikel
+            </div>
+            <div class="sub-title">
+                Selalu update tentang pariwisata Indonesia
+            </div>
+            <div class="subscribe">
+                <input type="text" placeholder="Email">
+                <a href="#">
+                    <button>Langganan</button>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <div class="left">
+                    travelID
+                </div>
+                <div class="right">
+                    © 2018. travelID. All Right Reserved
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+</html>

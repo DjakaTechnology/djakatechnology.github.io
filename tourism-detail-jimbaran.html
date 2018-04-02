@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <style type="text/css">
+        .subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="initialize()" style="background-color: #fbfbfb">
+    <div id="navbar" class="navbar article-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>travelID</h1>
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="tourism.html" class="active">Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tourism-detail-page">
+        <div class="tdp-banner" style="background-image: url('assets/images/jimbaran.jpg')!important; ">
+            <div class="container">
+                <div class="tdp-banner-text">
+                    <div class="tdp-title">
+                        Pantai Jimbaran
+                    </div>
+                    <div class="tdp-location">
+                        <img src="assets/icons/shape.png" style="height: 36px;margin-bottom : -6px"> Jimbaran, Kuta Selatan, Bali
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tdp-content">
+                <div class="tdp-left">
+                    <div class="tdp-nav">
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-detail" type="button" class="primary-btn active" onClick="tourismNav('detail')">Penjelasan</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-history" type="button" class="primary-btn" onClick="tourismNav('history')">Sejarah</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-map" type="button" class="primary-btn" onClick="tourismNav('map')">Peta</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-gallery" type="button" class="primary-btn" onClick="tourismNav('gallery')">Galeri</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tdp-right">
+                    <div id="tdp-detail">
+                        <p>Jimbaran adalah sebuah kelurahan yang terdiri dari 12 banjar adat dan 1 banjar dinas di wilayah Kecamatan Kuta Selatan, Kabupaten Badung, Bali. Lokasi wilayah ini berdekatan Sanur dan Nusa Dua serta Bandara Internasional Ngurah Rai.
+
+
+                        </p><br>
+                        <p>
+                        Desa adat Jimbaran pada mulanya merupakan kampung nelayan serta petani. Semenjak di wilayah pantai Jimbaran muncul banyak tempat makan hasil laut (seafood) yang pertama di Bali selatan serta beberapa hotel bertaraf internasional, kini mata pencaharian penduduk lokal lebih ke arah pariwisata.</p><br>
+                        
+                    </div>
+                    <div id="tdp-history"><p>Menurut penduduk setempat, nama Jimbaran beserta nama-nama tempat dan pura di dalamnya memiliki catatan tertulis. Berikut ini merupakan terjemahan bebas dari halaman 12a-17b salinan lontar Piagem Dukuh Gamongan milik Nyoman Bagia (Jro Mangku Gede di Pura Sarin Bwana).
+                    </p><br>
+
+                </div>
+                <div id="tdp-map">
+                    <img src="assets/images/map.jpg">
+                </div>
+                <div id="tdp-gallery">
+                    <div class="tdp-gallery-list">
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="content container">
+        <div class="title">
+            Berlangganan Artikel
+        </div>
+        <div class="sub-title">
+            Selalu update tentang pariwisata Indonesia
+        </div>
+        <div class="subscribe">
+            <input type="text" placeholder="Email">
+            <a href="#">
+                <button>Langganan</button>
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="left">
+                travelID
+            </div>
+            <div class="right">
+                © 2018. travelID. All Right Reserved
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>

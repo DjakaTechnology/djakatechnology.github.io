@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <style type="text/css">
+        .subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="initialize()" style="background-color: #fbfbfb">
+    <div id="navbar" class="navbar article-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>travelID</h1>
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="tourism.html" class="active">Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tourism-detail-page">
+        <div class="tdp-banner" style="background-image: url('assets/images/pandawa/2.jpg')!important; ">
+            <div class="container">
+                <div class="tdp-banner-text">
+                    <div class="tdp-title">
+                        Pantai Pandawa
+                    </div>
+                    <div class="tdp-location">
+                        <img src="assets/icons/shape.png" style="height: 36px;margin-bottom : -6px"> Pantai Pandawa, Bali
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tdp-content">
+                <div class="tdp-left">
+                    <div class="tdp-nav">
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-detail" type="button" class="primary-btn active" onClick="tourismNav('detail')">Penjelasan</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-history" type="button" class="primary-btn" onClick="tourismNav('history')">Sejarah</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-map" type="button" class="primary-btn" onClick="tourismNav('map')">Peta</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-gallery" type="button" class="primary-btn" onClick="tourismNav('gallery')">Galeri</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tdp-right">
+                    <div id="tdp-detail">
+                        <p>Pantai Pandawa adalah salah satu kawasan wisata di area Kuta selatan, Kabupaten Badung, Bali. Pantai ini terletak di balik perbukitan dan sering disebut sebagai Pantai Rahasia (Secret Beach). Di sekitar pantai ini terdapat dua tebing yang sangat besar yang pada salah satu sisinya dipahat lima patung Pandawa dan Kunti. Keenam patung tersebut secarara berurutan (dari posisi tertinggi) diberi penejasan nama Dewi Kunti, Dharma Wangsa, Bima, Arjuna, Nakula, dan Sadewa.
+
+
+                        </p><br><p>
+                       Selain untuk tujuan wisata dan olahraga air, pantai ini juga dimanfaatkan untuk budidaya rumput laut karena kontur pantai yang landai dan ombak yang tidak sampai ke garis pantai. Cukup banyak wisatawan yang melakukan paralayang dari Bukit Timbis hingga ke Pantai Pandawa.</p><br>
+                        
+                    </div>
+                    <div id="tdp-history"><p>Di dalam Epos Mahabharata, diceritakan kehidupan Sang Panca Pandawa yang dikurung di dalam Goa Gala-Gala. Sampai akhirnya keluarga Pandawa membuat sebuah terowongan yang memungkinkan keluarga Pandawa bisa menyelamatkan diri. Setelah berhasil menyelamatkan diri, Panca Pandawa yang terdiri dari Yudhistira, Bima, Arjuna, Nakula dan Sadewa membuka suatu kawasan hutan belantara yang sangat angker sebagai daerah kekuasaan, berkat kerja keras dan dukungan dari seluruh pengikutnya, Panca Pandawa dapat membangun kerajaan Amertha yang dipimpin oleh Raja Yudhistira.
+                    </p><br>
+
+                    <p>Pada tanggal 27 Desember 2012, Pantai ini ditetapkan menjadi Pantai Pandawa, sebelumnya dikenal sebagai Pantai Melasti. Pada tanggal itu pula diselenggarakan Pandawa Beach Festival yang pertama. Diambil nama Pantai Pandawa karena ada kemiripan cerita yang ditulis dalam epos Maha Bharata dengan fakta perjalanan nasib masyarakat Desa Kutuh, sehingga masyarakat sepakat memberi  nama Pantai MELASTI (secret beach) dengan sebutan Pantai Pandawa agar cerita keduanya bisa selalu dikenang sepanjang masa.</p>
+</div>
+                <div id="tdp-map">
+                    <img src="assets/images/map.jpg">
+                </div>
+                <div id="tdp-gallery">
+                    <div class="tdp-gallery-list">
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="content container">
+        <div class="title">
+            Berlangganan Artikel
+        </div>
+        <div class="sub-title">
+            Selalu update tentang pariwisata Indonesia
+        </div>
+        <div class="subscribe">
+            <input type="text" placeholder="Email">
+            <a href="#">
+                <button>Langganan</button>
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="left">
+                travelID
+            </div>
+            <div class="right">
+                © 2018. travelID. All Right Reserved
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>

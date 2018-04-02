@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <style type="text/css">
+        .subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="initialize()" style="background-color: #fbfbfb">
+    <div id="navbar" class="navbar article-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>travelID</h1>
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="tourism.html" class="active">Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tourism-detail-page">
+        <div class="tdp-banner" style="background-image: url('assets/images/sanur/1.jpg')!important; ">
+            <div class="container">
+                <div class="tdp-banner-text">
+                    <div class="tdp-title">
+                        Pantai Sanur
+                    </div>
+                    <div class="tdp-location">
+                        <img src="assets/icons/shape.png" style="height: 36px;margin-bottom : -6px"> Sanur, Bali
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tdp-content">
+                <div class="tdp-left">
+                    <div class="tdp-nav">
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-detail" type="button" class="primary-btn active" onClick="tourismNav('detail')">Penjelasan</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-history" type="button" class="primary-btn" onClick="tourismNav('history')">Sejarah</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-map" type="button" class="primary-btn" onClick="tourismNav('map')">Peta</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-gallery" type="button" class="primary-btn" onClick="tourismNav('gallery')">Galeri</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tdp-right">
+                    <div id="tdp-detail">
+                        <p><b>Pantai Sanur</b> adalah sebuah tempat pelancongan pariwisata yang terkenal di pulau Bali. Tempat ini letaknya adalah persis di sebelah timur kota Denpasar, ibukota Bali. Sanur berada di Kotamadya Denpasar.</p><br>
+                        <p>Karena memiliki ombak yang cukup tenang, maka pantai Sanur tidak bisa dipakai untuk surfing layaknya Pantai Kuta. Tak jauh lepas Pantai Sanur terdapat juga lokasi wisata selam dan snorkeling. Oleh karena kondisinya yang ramah, lokasi selam ini dapat digunakan oleh para penyelam dari semua tingkatan keahlian.</p><br>
+                        <p>Pantai Sanur juga dikenal sebagai Sunrise beach (pantai Matahari terbit) sebagai lawan dari Pantai Kuta.</p><br>
+                        <p>Karena lokasinya yang berada di sebelah timur pulau Bali, maka pantai Bali ini menjadi lokasi yang tepat untuk menikmati sunrise atau Matahari terbit. Hal ini menjadikan tempat wisata ini makin menarik, bahkan ada sebuah ruas di pantai Sanur ini yang bernama pantai Matahari Terbit karena pemandangan saat Matahari terbit sangat indah jika dilihat dari sana.</p><br>
+                        <p>Sepanjang pantai Bali ini menjadi tempat yang pas untuk melihat Matahari terbit. Apalagi sekarang sudah dibangun semacam sanderan yang berisi pondok-pondok mungil yang bisa dijadikan tempat duduk-duduk menunggu Matahari terbit. Selain itu, ombak di pantai ini relatif lebih tenang sehingga sangat cocok untuk ajang rekreasi pantai anak-anak dan tidak berbahaya.</p><br>
+                        <p>Selain itu, pengunjung bisa melihat Matahari terbit dengan berenang di pantai. Sebagian kawasan pantai ini mempunyai pasir berwarna putih yang eksotis. Dilengkapi dengan pohon pelindung, pengunjung bisa duduk-duduk sambil menikmati jagung bakar ataupun lumpia yang banyak dijajakan pedagang kaki lima.</p><br>
+                        <p>Sepanjang tempat wisata pantai Bali ini sekarang sudah dilengkapi dengan penunjang wisata berupa hotel, restoran ataupun kafe-kafe kecil serta art shop. Salah satu hotel tertua di Bali dibangun di pantai ini. Hotel ini bernama Ina Grand Bali Beach yang terletak persis di tepi pantai. Selain itu, sepanjang garis pantai juga dibangun semacam area pejalan kaki yang seringkali digunakan sebagai jalur jogging oleh wisatawan ataupun masyarakat lokal. Jalur ini terbentang ke arah selatan melewati pantai Shindu, pantai Karang hingga Semawang sehingga wisatawan bisa berolahraga sekaligus menikmati pemandangan pantai di pagi hari.</p><br>
+
+                    </div>
+                    <div id="tdp-history"><p>Di dalam sebuah sejarah Bali kuno, Pantai Sanur sudah dikenal dengan keindahannya, hal ini sudah tercantum dalam sebuah Prasasti Raja Kasari Warmadewa. Dan sekarang Prasasti tersebut terdapat di daerah Blanjong tepatnya di bagian selatan Pantai Sanur. Dan pada masa Kolonial Belanda, Pantai Sanur ini dikenal sebagai lokasi pendaratan untuk para bala tentara Belanda ketika akan menyerang Kerajaan Badung. Perang yang terjadi pada tahun 1906 yang dikenal dengan Puputan Badung yaitu semangat perang sampai mati.
+                    </p><br>
+
+                </div>
+                <div id="tdp-map">
+                    <img src="assets/images/map.jpg">
+                </div>
+                <div id="tdp-gallery">
+                    <div class="tdp-gallery-list">
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="content container">
+        <div class="title">
+            Berlangganan Artikel
+        </div>
+        <div class="sub-title">
+            Selalu update tentang pariwisata Indonesia
+        </div>
+        <div class="subscribe">
+            <input type="text" placeholder="Email">
+            <a href="#">
+                <button>Langganan</button>
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="left">
+                travelID
+            </div>
+            <div class="right">
+                © 2018. travelID. All Right Reserved
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>

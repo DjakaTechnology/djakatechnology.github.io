@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/animate.css">
+    <style type="text/css">blockquote {
+        font-family: Georgia, serif;
+        font-size: 18px;
+        font-style: italic;
+        width: 90%;
+        margin: 0.25em 0;
+        padding: 0.25em 40px;
+        line-height: 1.45;
+        position: relative;
+        color: #383838;
+    }
+    blockquote:before {
+        display: block;
+        content: "\201C";
+        font-size: 80px;
+        position: absolute;
+        left: -20px;
+        top: -20px;
+        color: #7a7a7a;
+    }
+    blockquote cite {
+        color: #999999;
+        font-size: 14px;
+        display: block;
+        margin-top: 5px;
+    }
+
+    blockquote cite:before {
+        content: "\2014 \2009";
+    }
+    .subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+    }
+</style>
+</head>
+
+<body onload="initialize()">
+    <div id="navbar" class="navbar article-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>travelID</h1>
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="tourism.html">Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html" class="active">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="post-page">
+        <div class="container">
+            <div class="pp-post wow slideInLeft">
+                <div class="container">
+                    <div class="pp-post-header">
+                        <div class="pp-post-time">
+                            6 menit yang lalu
+                        </div>
+                        <div class="pp-post-share">
+                            <ul style="list-style: none;">
+                                <a href="#"><li style="float: left; padding-left: 15px;"><img src="assets/icons/fb.png"></li></a>
+                                <a href="#"><li style="float: left; padding-left: 15px;">
+                                    <img src="assets/icons/twitter.png"> </li></a>
+                                    <a href="#"><li style="float: left; padding-left: 15px;">
+                                        <img src="assets/icons/in.png"> </li></a>
+                                        <a href="#"><li style="float: left; padding-left: 15px;">
+                                            <img src="assets/icons/link.png"> </li></a>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="pp-post-title">
+                                    Secuil Hamparan Surga di Bumi Ponorogo
+                                </div>
+                                <div class="pp-post-location">
+                                    Bengkulu
+                                </div>
+                            </div>
+                            <div class="pp-post-img">
+                                <img src="assets/images/bengkulu-artikel-plus.jpg">
+                            </div>
+                            <div class="container">
+                                <div class="pp-post-desc ">
+                                    <p >Bereksplorasi ke Jawa Timur seolah tiada berujung. Bagai sebuah sumur vakansi yang tidak memiliki dasar. Banyak banget wisata yang bisa kamu jamah di Jawa Timur. Dari mulai wisata alam, kuliner, hingga kebudayaan. Salah satunya adalah kota kelahiran Reog, Ponorogo. Ya, Kota Ponorogo memang terkenal dengan Reognya yang telah mendunia. Tapi, nggak cuma kesenian Reog saja yang membuat semua orang tertarik untuk kembali dan singgah ke kota ini.</p><br>
+                                    <p>Selain Reog, berikut ini adalah beberapa destinasi wisata Ponorogo yang bisa kamu kunjungi dengan tenang. Meski beberapa sudah terjamah ramai oleh para pelancong, seperti Goa Lowo dan sebagainya, sebenarnya masih ada loh beberapa surga tersembunyi di tanah Reog yang bisa kamu daftarkan dalam agenda perjalananmu.</p><br>   
+                                    <p><b>Buat kamu yang butuh vitamin A, karena kerjaanmu yang menyiksa mata, cobalah untuk menanjak ke Gunung Bedes.</b></p><br>
+                                    <img src="assets/images/bengkulu-artikel-plus.jpg" style="display: block;    margin-left: auto;    margin-right: auto;    width: 50%;" alt="joko">
+                                    <br>
+                                    <p>Wisata pertama yang perlu kamu jamah ketika menjejakkan kaki di tanah Ponorogo adalah Gunung Bedes. Bukit ini berada di perbatasan Ponorogo dan Trenggalek, tepatnya di Dusun Buyut, Desa Ngadirojo, Kecamatan Sooko. Di puncak bukit setinggi 200 mdpl ini, matamu akan diremajakan dengan pemandangan serba hijau yang menyehatkan. Apalagi kalau setiap hari kerjaanmu memandang layar komputer! Beuh! Butuh banget vitamin A tuh!</p><br>
+                                    <p><b>Mampirlah ke Masjid Hill! Kamu akan sadar betapa manusia ini sungguh kecil dibanding dengan semesta ciptaan Tuhan!</b></p><br>
+                                    <img src="assets/images/bengkulu-artikel-plus1.jpg" style="display: block;    margin-left: auto;    margin-right: auto;    width: 50%;" alt="joko"><br>
+                                    <p>Terletak di desa Pandak Balong, Kecamatan Balong, Masjid Hill atau Gunung Masjid menjadi salah satu destinasi wisata yang masih belum ramai dikunjungi oleh para pelancong. Entah kenapa bukit ini dinamai Masjid Hill. Mungkin karena ketika kamu berada di puncaknya, kamu akan merasa bahwa Tuhan memang Pemilik Segalanya. Sehingga akan muncul kesadaraan atas dirimu sendiri bahwa manusia nggak ada apa-apanya di dunia ini. Masjid Hill, wahana penyerahan diri atas semesta. Mungkin.</p><br>
+                                    <p>Nah, di sini kamu bisa menikmati indahnya alam Ponorogo dan beberapa bukit mungil nan hijau seperti layaknya bukit Teletubies. Kira-kira butuh waktu hingga 40 menit untuk bisa mencapai puncaknya. Nah, buruan ke sana deh, mumpung masih sepi!</p><br>
+                                    <p><b>Buat kamu yang suka camping, coba deh ke Bukit Pare di desa Cepoko. Camping Ground asyik di Kota Ponorogo!</b></p><br>
+                                    <img src="assets/images/bengkulu-artikel-plus2.jpg" style="display: block;    margin-left: auto;    margin-right: auto;    width: 50%;" alt="joko"><br>
+                                    
+                                    <p>Terletak di desa Cepoko, Kecamatan Ngrayun, bukit ini memiliki trek yang cukup bikin berkeringat. Buat kamu yang belum pernah mendaki, mungkin perjalanan ini akan melelahkan. Ya, paling nggak ada 3-4 km jalan yang mesti kamu tempuh. Tapi, begitu sampai di puncaknya, kamu nggak akan merasa letih sama sekali! Sedikit deng. Kamu akan disuguhi pemandangan yang amazing! Hamparan rumput hijau yang sangat menggoda. Cukup recommended sih buat kamu yang pengin camping di sini.</p><br>
+                                    <br>
+                                </div>
+                                <div class="pp-post-more">
+                                    <a href="article.html"><button class="primary-btn" style="width: 214px;height: 48px;">Lihat Artikel Lainnya</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="footer">
+                    <div class="content container">
+                        <div class="title">
+                            Berlangganan Artikel
+                        </div>
+                        <div class="sub-title">
+                            Selalu update tentang pariwisata Indonesia
+                        </div>
+                        <div class="subscribe">
+                            <input type="text" placeholder="Email">
+                            <a href="#">
+                                <button>Langganan</button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <div class="container">
+                            <div class="left">
+                                travelID
+                            </div>
+                            <div class="right">
+                                © 2018. travelID. All Right Reserved
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script src="js/wow.min.js"></script>
+                <script>
+                    new WOW().init();
+                </script>
+            </body>

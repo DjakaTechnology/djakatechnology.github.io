@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Artikel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="js/main.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+    <style type="text/css">
+        .subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: white;
+            opacity: 1; /* Firefox */
+        }
+
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: white;
+        }
+
+        ::-ms-input-placeholder { /* Microsoft Edge */
+            color: white;
+        }
+    </style>
+</head>
+
+<body onload="initialize()" style="background-color: #fbfbfb">
+    <div id="navbar" class="navbar article-nav">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;">
+                    <h1>travelID</h1>
+                </a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li class="firstNav">
+                        <a href="index.html">Beranda</a>
+                    </li>
+                    <li>
+                        <a href="tourism.html" class="active">Wisata</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Galeri</a>
+                    </li>
+                    <li>
+                        <a href="article.html">Artikel</a>
+                    </li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="tourism-detail-page">
+        <div class="tdp-banner" style="background-image: url('assets/images/lot/1.jpg')!important; ">
+            <div class="container">
+                <div class="tdp-banner-text">
+                    <div class="tdp-title">
+                        Pantai Tanah Lot
+                    </div>
+                    <div class="tdp-location">
+                        <img src="assets/icons/shape.png" style="height: 36px;margin-bottom : -6px"> Tanah Lot, Bali
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="tdp-content">
+                <div class="tdp-left">
+                    <div class="tdp-nav">
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-detail" type="button" class="primary-btn active" onClick="tourismNav('detail')">Penjelasan</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-history" type="button" class="primary-btn" onClick="tourismNav('history')">Sejarah</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-map" type="button" class="primary-btn" onClick="tourismNav('map')">Peta</button>
+                        </div>
+                        <div class="tdp-nav-item wow fadeInLeft">
+                            <button id="btn-gallery" type="button" class="primary-btn" onClick="tourismNav('gallery')">Galeri</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tdp-right">
+                    <div id="tdp-detail">
+                        <p>Pura Tanah Lot adalah sebuah objek wisata di Bali, Indonesia. Di sini ada dua pura yang terletak di atas batu besar. Satu terletak di atas bongkahan batu dan satunya terletak di atas tebing mirip dengan Pura Uluwatu. Pura Tanah Lot ini merupakan bagian dari pura Dang Kahyangan. Pura Tanah Lot merupakan pura laut tempat pemujaan dewa-dewa penjaga laut. Tanah Lot terkenal sebagai tempat yang indah untuk melihat matahari terbenam.
+                        </p><br>
+                        
+                    </div>
+                    <div id="tdp-history">
+                    <p>Sejarah Pura Tanah Lot Bali Indonesia berdasarkan legenda, dikisahkan pada abad ke -15, Bhagawan Dang Hyang Nirartha atau dikenal dengan nama Dang Hyang Dwijendra melakukan misi penyebaran agama Hindu dari pulau Jawa ke pulau Bali.</p><br>
+                    <p>Pada saat itu yang berkuasa di pulau Bali adalah Raja Dalem Waturenggong. Beliau sangat menyambut baik dengan kedatangan dari Dang Hyang Nirartha dalam menjalankan misinya, sehingga penyebaran agama Hindu berhasil sampai ke pelosok – pelosok desa yang ada di pulau Bali.</p><br>
+                    <p>Dalam sejarah Tanah Lot, dikisahkan Dang Hyang Nirartha, melihat sinar suci dari arah laut selatan Bali, maka Dang Hyang Nirartha mencari lokasi dari sinar tersebut dan tibalah beliau di sebuah pantai di desa yang bernama desa Beraban Tabanan.</p><br>
+                    <p>Pada saat itu desa Beraban dipimpin oleh Bendesa Beraban Sakti, yang sangat menentang ajaran dari Dang Hyang Nirartha dalam menyebarkan agama Hindu. Bendesa Beraban Sakti, menganut aliran monotheisme.</p><br>
+                    <p>Dang Hyang Nirartha melakukan meditasi di atas batu karang yang menyerupai bentuk burung beo yang pada awalnya berada di daratan.</p><br>
+                    <p>Dengan berbagai cara Bendesa Beraban ingin mengusir keberadaan Dang Hyang Nirartha dari tempat meditasinya.</p><br>
+                    <p>Menurut sejarah Tanah Lot berdasarkan legenda Dang Hyang Nirartha memindahkan batu karang (tempat bermeditasinya) ke tengah pantai dengan kekuatan spiritual. Batu karang tersebut diberi nama Tanah Lot yang artinya batukarang yang berada di tengah lautan.</p><br>
+                    <p>Semenjak peristiwa itu Bendesa Beraban Sakti mengakui kesaktian yang dimiliki Dang Hyang Nirartha dengan menjadi pengikutnya untuk memeluk agama Hindu bersama dengan seluruh penduduk setempat.</p><br>
+                    <p>Dikisahkan di sejarah Tanah Lot, sebelum meninggalkan desa Beraban, Dang Hyang Nirartha memberikan sebuah keris kepada bendesa Beraban. Keris tersebut memiliki kekuatan untuk menghilangkan segala penyakit yang menyerang tanaman.</p><br>
+                    <p>Keris tersebut disimpan di Puri Kediri dan dibuatkan upacara keagamaan di Pura Tanah Lot setiap enam bulan sekali. Semenjak hal ini rutin dilakukan oleh penduduk desa Beraban, kesejahteraan penduduk sangat meningkat pesat dengan hasil panen pertanian yang melimpah dan mereka hidup dengan saling menghormati.</p><br>
+                </div>
+                <div id="tdp-map">
+                    <img src="assets/images/map.jpg">
+                </div>
+                <div id="tdp-gallery">
+                    <div class="tdp-gallery-list">
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                        <div class="tdp-gallery-item">
+                            <img src="assets/images/bali-nusa.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+    <div class="content container">
+        <div class="title">
+            Berlangganan Artikel
+        </div>
+        <div class="sub-title">
+            Selalu update tentang pariwisata Indonesia
+        </div>
+        <div class="subscribe">
+            <input type="text" placeholder="Email">
+            <a href="#">
+                <button>Langganan</button>
+            </a>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="left">
+                travelID
+            </div>
+            <div class="right">
+                © 2018. travelID. All Right Reserved
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+</body>

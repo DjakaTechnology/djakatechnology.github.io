@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Artikel</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<script src="js/main.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<link rel="icon" href="assets/icons/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="css/animate.css">
+	<style type="text/css">
+		.subscribe ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: white;
+			opacity: 1; /* Firefox */
+		}
+
+		:-ms-input-placeholder { /* Internet Explorer 10-11 */
+			color: white;
+		}
+
+		::-ms-input-placeholder { /* Microsoft Edge */
+			color: white;
+		}
+	</style>
+</head>
+
+<body onload="initialize()" style="background-color: #fbfbfb">
+	<div id="navbar" class="navbar article-nav">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html" style="text-decoration: none;">
+					<h1>travelID</h1>
+				</a>
+			</div>
+			<div class="nav">
+				<ul>
+					<li class="firstNav">
+						<a href="index.html">Beranda</a>
+					</li>
+					<li>
+						<a href="tourism.html" class="active">Wisata</a>
+					</li>
+					<li>
+						<a href="gallery.html">Galeri</a>
+					</li>
+					<li>
+						<a href="article.html">Artikel</a>
+					</li>
+					<li class="icon">
+						<a href="javascript:void(0);" style="font-size:15px;" onclick="navElaps()">&#9776;</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="tourism-page" >
+		<div class="container">
+			<div class="tour-filter">
+				<h1>Urutkan</h1>
+				<div class="custom-select" style="width: 200px">
+					<select>
+						<option>Pilih Provinsi</option>
+						<option value="aceh">Aceh</option>
+						<option value="Sumut">Sumatera Utara</option>
+						<option value="sumbar">Sumatera Barat</option>
+						<option value="Riau">Riau</option>
+						<option value="Jambi">Jambi</option>
+						<option value="Sumsel">Sumatera Selatan</option>
+						<option value="Bengkulu">Bengkulu</option>
+						<option value="Lampung">Lampung</option>
+						<option value="BaBel">Kep. Bangka Belitung</option>
+						<option value="kepRiau">Kepulauan Riau</option>
+						<option value="Jakarta">Jakarta</option>
+						<option value="Jabar">Jawa Barat</option>
+						<option value="Banten">Banten</option>
+						<option value="Jateng">Jawa Tengah</option>
+						<option value="Yogyakarta">Yogyakarta</option>
+						<option value="Jatim">Jawa Timur</option>
+						<option value="Kalbar">Kalimantan Barat</option>
+						<option value="Kalteng">Kalimantan Tengah</option>
+						<option value="Kalsel">Kalimantan Selatan</option>
+						<option value="Kaltim">Kalimantan Timur</option>
+						<option value="Kaltra">Kalimantan Utara</option>
+						<option value="Bali" selected="selected">Bali</option>
+						<option value="NTT">Nusa Tenggara Timur</option>
+						<option value="NTB">Nusa Tenggara Barat</option>
+						<option value="Sulut">Sulawesi Utara</option>
+						<option value="Sulteng">Sulawesi Tengah</option>
+						<option value="Sulsel">Sulawesi Selatan</option>
+						<option value="Sultengg">Sulawesi Tenggara</option>
+						<option value="Sulbar">Sulawesi Barat</option>
+						<option value="Gorontalo">Gorontalo</option>
+						<option value="Maluku">Maluku</option>
+						<option value="Maluku Utara">Maluku Utara</option>
+						<option value="Papua">Papua</option>
+						<option value="Papua Barat">Papua Barat</option>
+					</select>
+				</div>
+				<div class="tour-check">
+					<div>
+						<label class="checkbox-cstm">Pantai
+							<input type="checkbox" checked>
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Gunung
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Bukit
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Hutan
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Air Terjun
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Candi
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Danau
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Sungai
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Taman
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Bangunan
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+					<div>
+						<label class="checkbox-cstm">Museum
+							<input type="checkbox">
+							<span class="checkmark"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="tour-right">
+				<div class="tour-search" >
+					<input type="text" class="search" placeholder="Cari tempat wisata">
+				</div>
+				<div class="tour-list   wow fadeInUp" >
+					<div class="tour-card">
+						<div class="tour-img">
+							<img src="assets/images/bali-kuta.jpg">
+						</div>
+						<div class="container">
+							<div class="tour-title">
+								Pantai Kuta
+							</div>
+							<div class="tour-location">
+								<img src="assets/icons/placeholder.png" width="18px;padding-top:10px;"> Bali
+							</div>
+							<div class="tour-see">
+								<a href="tourism-detail-kuta.html"><button class="primary-btn">Lihat</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="tour-card">
+						<div class="tour-img">
+							<img src="assets/images/bali-jimbaran.jpg">
+						</div>
+						<div class="container">
+							<div class="tour-title">
+								Pantai Jimbaran
+							</div>
+							<div class="tour-location">
+								<img src="assets/icons/placeholder.png" width="18px;padding-top:10px;">  Bali
+							</div>
+							<div class="tour-see">
+								<a href="tourism-detail-jimbaran.html"><button class="primary-btn">Lihat</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="tour-card">
+						<div class="tour-img">
+							<img src="assets/images/bali-nusa.jpg">
+						</div>
+						<div class="container">
+							<div class="tour-title">
+								Pantai Nusa Dua
+							</div>
+							<div class="tour-location">
+								<img src="assets/icons/placeholder.png" width="18px;padding-top:10px;"> Bali
+							</div>
+							<div class="tour-see">
+								<a href="tourism-detail-nusa.html"><button class="primary-btn">Lihat</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="tour-card">
+						<div class="tour-img">
+							<img src="assets/images/bali-pandawa.jpg">
+						</div>
+						<div class="container">
+							<div class="tour-title">
+								Pantai Pandawa
+							</div>
+							<div class="tour-location">
+								<img src="assets/icons/placeholder.png" width="18px;padding-top:10px;">  Bali
+							</div>
+							<div class="tour-see">
+								<a href="tourism-detail-pandawa.html"><button class="primary-btn">Lihat</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="tour-card">
+						<div class="tour-img">
+							<img src="assets/images/bali-sanur.jpg">
+						</div>
+						<div class="container">
+							<div class="tour-title">
+								Pantai Sanur
+							</div>
+							<div class="tour-location">
+								<img src="assets/icons/placeholder.png" width="18px;padding-top:10px;"> Bali
+							</div>
+							<div class="tour-see">
+								<a href="tourism-detail-sanur.html"><button class="primary-btn">Lihat</button></a>
+							</div>
+						</div>
+					</div>
+					<div class="tour-card">
+						<div class="tour-img">
+							<img src="assets/images/bali-lot.jpg">
+						</div>
+						<div class="container">
+							<div class="tour-title">
+								Pantai Tanah Lot
+							</div>
+							<div class="tour-location">
+								<img src="assets/icons/placeholder.png" width="18px;padding-top:10px;">  Bali
+							</div>
+							<div class="tour-see">
+								<a href="tourism-detail-lot.html"><button class="primary-btn">Lihat</button></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="content container">
+			<div class="title">
+				Berlangganan Artikel
+			</div>
+			<div class="sub-title">
+				Selalu update tentang pariwisata Indonesia
+			</div>
+			<div class="subscribe">
+				<input type="text" placeholder="Email">
+				<a href="#">
+					<button>Langganan</button>
+				</a>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="left">
+					travelID
+				</div>
+				<div class="right">
+					© 2018. travelID. All Right Reserved
+				</div>
+			</div>
+		</div>
+	</div>
+	<<<<<<< HEAD
+	=======
+	<script src="js/wow.min.js"></script>
+	<script>
+		new WOW().init();
+	</script>
+	>>>>>>> 74f38ef5d89c72512363261d70face615433c193
+</body>
